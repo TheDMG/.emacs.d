@@ -1,18 +1,14 @@
 ;; -*- lexical-binding: t; -*-
 
+(setq gc-cons-threshold most-positive-fixnum)
+
 (defvar default-emacs--file-name-handler-alist file-name-handler-alist)
 (defvar default-emacs--vc-handled-backends vc-handled-backends)
 
 (setq file-name-handler-alist nil
       vc-handled-backends nil)
 
-(add-hook 'emacs-startup-hook
-          (lambda ()
-            (setq file-name-handler-alist default-emacs--file-name-handler-alist
-                  vc-handled-backends default-emacs--vc-handled-backends)))
-
-(menu-bar-mode   -1)
-(tool-bar-mode   -1)
-(scroll-bar-mode -1)
-(tooltip-mode    -1)
-
+(push '(menu-bar-lines . 0) default-frame-alist)
+(push '(tool-bar-lines . 0) default-frame-alist)
+(push '(vertical-scroll-bars . nil) default-frame-alist)
+(push '(tooltip . nil) default-frame-alist)
