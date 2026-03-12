@@ -23,18 +23,18 @@
          (default-directory (file-name-directory file))
          (buf-name "*run*")
          (cmd (dmg/current-file-run-command file)))
-    (when-let ((buffer (get-buffer buf-name)))
-      (when-let ((proc (get-buffer-process buffer)))
+    (when-let* ((buffer (get-buffer buf-name)))
+      (when-let* ((proc (get-buffer-process buffer)))
         (delete-process proc))
       (kill-buffer buffer))
     (let ((buffer (make-comint-in-buffer "run" buf-name shell-file-name nil
                                          shell-command-switch cmd)))
       (with-current-buffer buffer
         (setq-local comint-process-echoes t)
-        (local-set-key (kbd "q") #'kill-buffer-and-window))
+        (keymap-local-set "q" #'kill-buffer-and-window))
       (pop-to-buffer buffer))))
 
-(global-set-key (kbd "C-c x") #'dmg/run-current-file)
-(global-set-key (kbd "<f5>") #'dmg/run-current-file)
+(keymap-global-set "C-c x" #'dmg/run-current-file)
+(keymap-global-set "<f5>" #'dmg/run-current-file)
 
 (provide 'runner)

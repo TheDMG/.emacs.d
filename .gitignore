@@ -4,4 +4,6 @@ auto-save-list/
 eln-cache/
 elpa/
 url/
-
+tree-sitter/
+agent/
+projects.eld

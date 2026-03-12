@@ -9,5 +9,9 @@
 (use-package magit
   :defer t)
 
+;; agent-shell: comint shell for LLM coding agents (Claude, Gemini, Codex…) via ACP.
+(use-package agent-shell
+  :defer t)
+
 
 (provide 'packages)

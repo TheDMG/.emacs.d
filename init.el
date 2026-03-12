@@ -11,6 +11,7 @@
 (require 'lsp)
 (require 'ui)
 (require 'runner)
+(require 'stopwatch)
 
 (add-hook 'emacs-startup-hook
           (lambda ()
