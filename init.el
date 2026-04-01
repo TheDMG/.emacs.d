@@ -7,6 +7,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (require 'packages)
+(require 'markdown)
 (require 'lang-treesit)
 (require 'lsp)
 (require 'ui)
