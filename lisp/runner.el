@@ -9,7 +9,7 @@
       ("c" (format "gcc -o %s %s && %s" quoted-base quoted-file quoted-base))
       ((or "cpp" "cc" "cxx")
        (format "g++ -o %s %s && %s" quoted-base quoted-file quoted-base))
-      ("py" (format "python3 %s" quoted-file))
+      ("py" (format "%s %s" (or (executable-find "python3") (executable-find "python") "python3") quoted-file))
       ("go" (format "go run %s" quoted-file))
       (_ (user-error "No runner for .%s files" ext)))))
 

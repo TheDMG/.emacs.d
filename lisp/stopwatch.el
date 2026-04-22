@@ -2,7 +2,6 @@
 
 (use-package org-timer
   :ensure nil
-  :defer t
   :bind (("C-c t s" . org-timer-start)
          ("C-c t p" . org-timer-pause-or-continue)
          ("C-c t q" . org-timer-stop)

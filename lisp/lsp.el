@@ -3,7 +3,13 @@
 (dolist (hook '(c-ts-mode-hook
                 c++-ts-mode-hook
                 python-ts-mode-hook
-                go-ts-mode-hook))
+                go-ts-mode-hook
+                java-ts-mode-hook
+                js-mode-hook
+                js-ts-mode-hook
+                typescript-mode-hook
+                typescript-ts-mode-hook
+                tsx-ts-mode-hook))
   (add-hook hook #'eglot-ensure))
 
 (setopt eglot-events-buffer-config '(:size 0))
